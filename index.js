@@ -2,25 +2,39 @@
   Виведіть у консоль загальну кількість яблук та винограду та їх різницю
 */
 
-const apples = 47;
+// const apples = 47;
 
-const grapes = 135;
+// const grapes = 135;
+
+// console.log(apples + grapes);
+// console.log(apples - grapes);
+
+// console.log(apples, grapes);
+
+// const name
+
+// name = 55453;
+
+// console.log(name);
 
 /*
   Заміни вираз перевизначення комбінованим оператором +=
 */
 
-let students = 100;
+// let students = 100;
 
-students = students + 50;
+// students = students + 50;
+// students %= 50;
 
-console.log(students);
+// console.log(students);
 
 /*
   Розбери пріоритет операторів в інструкції присвоєння
 */
 
-const result = 108 + 223 - 2 * 5;
+// const result = 108 + (223 - 2) * 5;
+
+// console.log(result);
 
 /*
   Напиши скрипт, який виводить у консоль заокруглені значення value
@@ -30,18 +44,30 @@ const result = 108 + 223 - 2 * 5;
   Перевірте, що буде в консолі при значеннях 27.3 та 27.9
 */
 
-const value = 27.5;
+// const value = `27.9px`;
+
+// console.log(Math.round(value));
+// console.log(Math.floor(value));
+// console.log(Math.ceil(value));
+// console.log(Math.trunc(value));
 
 /*
   Склади за допомогою шаблонних рядків речення: A has B bots in stock,
   де A та В - змінні вставлені в рядок
 */
 
-const companyName = "Cyberdyne Systems";
+// const companyName = "Cyberdyne Systems";
 
-const repairBots = 150;
+// const repairBots = 150;
 
-const defenceBots = 50;
+// const defenceBots = 50;
+
+// const result =
+//   companyName + " has " + (repairBots + defenceBots) + " bots in stock";
+
+// const result = `${companyName} has ${repairBots + defenceBots} bots in stock`;
+
+// console.log(result);
 
 /*
   Методи рядків та чейнінг
@@ -57,9 +83,43 @@ const defenceBots = 50;
   Індекс маси тіла необхідно округлити до однієї цифри після коми
   */
 
-let weight = "88,3";
-let height = "1.98";
+// const weight = "88,3";
+// const height = "1.98";
 
-// const bmi =
+// const validWeight = Number(weight.replace(",", "."));
+// const validHeight = Number(height.replace(",", "."));
+// const validWeight = +weight.replace(",", ".");
+// const validHeight = +height.replace(",", ".");
 
-// console.log(bmi)
+// console.log(validWeight);
+// console.log(validHeight);
+
+// const bmi = +(validWeight / validHeight ** 2).toFixed(1);
+
+// console.log(bmi);
+
+// const name = prompt("Write your age");
+
+// console.log(`Hello!`);
+
+// alert(`Hello!`);
+
+// const greeting = "Hello, Anya!";
+
+// const result = greeting.replace(",", ".").toLowerCase().toUpperCase();
+
+// console.log(result);
+
+// const isAdult = confirm("Is your age bigger than 18 or equal?");
+
+// console.log(isAdult);
+
+// console.log(1);
+
+// alert(55 + 105);
+
+// console.log(2);
+
+// console.log(`Andrii`);
+
+// console.log(5 === 5);
