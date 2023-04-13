@@ -2,12 +2,23 @@
   1. Приклади з областями видимості
 */
 
+// const a = 5;
+
+// {
+//   // const a = 7;
+
+//   {
+//     // const a = 10;
+
+//     console.log(a);
+//   }
+// }
+
 // -------------------------------//
-// let a = 10
+// let a = 10;
 
 // if (true) {
-
-//     const a = 5;
+//   const a = 5;
 // }
 
 // console.log(a);
@@ -15,40 +26,39 @@
 // ------------------------------//
 // const b = 10;
 
-// if(true){
-//     let b = 5;
-//     b = 15;
-//     console.log(b);
+// if (true) {
+//   let b = 5;
+//   b = 15;
+
+//   console.log(b);
 // }
+
 // console.log(b);
 
 // ------------------------------//
 // let c = 10;
 
 // if (true) {
-//     // let c = 100;
-//     c = 1
-//     if (true) {
-//         // let c = 25;
-//         c = 15;
+//   // let c = 100;
+//   c = 1;
 
-//     }
-
+//   if (true) {
+//     // let c = 25;
+//     c = 15;
+//   }
 // }
 
 // console.log(c);
 
 // ------------------------------//
 
-// const numbers = [1, 2, 3, 4, 5, 6, 7];
+// const numbers = [1, 2, 3];
 
 // let total = 0;
 
 // for (const number of numbers) {
-
-//     total += number;
-//     console.log(total);
-
+//   total += number;
+//   console.log(total);
 // }
 
 // console.log(total);
@@ -66,7 +76,36 @@
 
 // function declaretion
 
+// function log(name = "Anonymous", age = 40) {
+//   console.log(`Hi, ${name}, your age is ${age}`);
+// }
+
+// log();
+// log("Borys", 20);
+// log("Nadiya", 27);
+
+// console.log(getSum(1, 5));
+
+// function getSum(a, b) {
+//   return a + b;
+// }
+
+// console.log(getSum(1, 5));
+
+// const result = getSum(10, 15);
+
+// console.log(result);
+
 // function expression
+
+// const getSum = function (a, b) {
+//   return a + b;
+// };
+
+// console.log(getSum(1, 5));
+
+// console.log(window);
+
 // викликається тільки після оголошення
 
 /*
@@ -78,6 +117,24 @@
   Використати цикл for для вирішення задачі
 */
 
+// function getSum() {
+//   let total = 0;
+
+//   for (let index = 0; index < arguments.length; index += 1) {
+//     total += arguments[index];
+//   }
+
+//   // for (let value of arguments) {
+//   //   total += value;
+//   // }
+
+//   return total;
+// }
+
+// const result = getSum(30, 40, 50);
+
+// console.log(result);
+
 /*
   4. Стек викликів
 
@@ -85,17 +142,23 @@
 */
 
 // function foo() {
-//     console.log('start foo');
-//     console.log('end foo');
+//   console.log("start foo");
+//   console.log("end foo");
 // }
 
-// function boo(){
-//     console.log('start boo');
-//     foo()
-//     console.log('end boo');
+// function boo() {
+//   console.log("start boo");
+//   foo();
+//   console.log("end boo");
 // }
 
-// boo()
+// function doo() {
+//   console.log("start boo");
+//   foo();
+//   console.log("end boo");
+// }
+
+// boo();
 
 /*
   5. Практичне завдання
@@ -110,4 +173,58 @@
   updateCourse(oldName, newName) - замінює назву курсу на нову
 */
 
-// const courses = ['HTML', 'CSS', 'JavaScript', 'React', 'PostgreSQL'];
+// const courses = ["HTML", "CSS", "JavaScript", "React", "PostgreSQL"];
+
+// function addCourse(name) {
+//   if (!courses.includes(name)) {
+//     courses.push(name);
+//   }
+// }
+
+// function removeCourse(name) {
+//   const courseIndex = courses.indexOf(name);
+
+//   if (courseIndex !== -1) {
+//     courses.splice(courseIndex, 1);
+//   }
+// }
+
+// function updateCourse(oldName, newName) {
+//   const courseIndex = courses.indexOf(oldName);
+
+//   if (courseIndex !== -1) {
+//     courses.splice(courseIndex, 1, newName);
+//   }
+// }
+
+// addCourse("PM");
+
+// removeCourse("React");
+
+// updateCourse("HTML", "HTML5");
+
+// console.log(courses);
+
+// function getSum(a, b) {
+//   return a + b;
+// }
+
+// console.log(getSum(1, 5));
+
+// function log(name) {
+//   console.log(name);
+// }
+
+// function log(name, age) {
+//   console.log(name);
+// }
+
+// log("Andrii", 40);
+
+function anonymousFunc() {
+  console.log(arguments);
+}
+
+anonymousFunc();
+
+console.log([]);
