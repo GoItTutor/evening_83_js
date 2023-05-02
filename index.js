@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /*
   1. Контекст виклику this, визначення, призначення
@@ -10,35 +10,41 @@
   На контекст впливає де функція викликається
 */
 
-const user1 = {
-  name: 'Anna',
-  age: 22,
-  city: 'Kyiv',
+// const user1 = {
+//   name: "Anna",
+//   age: 22,
+//   city: "Kyiv",
 
-  showThis() {
-    console.log(this);
-  },
+//   showThis() {
+//     console.log(this);
+//   },
 
-  sayHi() {
-    console.log(`Hi, ${this.name}!`);
-  },
+//   sayHi() {
+//     console.log(`Hi, ${this.name}!`);
+//   },
 
-  sayFromWhere() {
-    console.log(`${this.name} is from ${this.city}!`);
-  },
-};
+//   sayFromWhere() {
+//     console.log(`${this.name} is from ${this.city}!`);
+//   },
+// };
 
-const user2 = {
-  name: 'Andrii',
-  age: 30,
-  city: 'Lviv',
+// user1.showThis();
 
-  // showThis: user1.showThis
+// const user2 = {
+//   name: "Andrii",
+//   age: 30,
+//   city: "Lviv",
 
-  // sayHi: user1.sayHi
+//   showThis: user1.showThis,
 
-  // sayFromWhere: user1.sayFromWhere
-};
+//   // sayHi: user1.sayHi
+
+//   // sayFromWhere: user1.sayFromWhere
+// };
+
+// console.log(user2);
+
+// user2.showThis();
 
 /*
   2. Значення this залежно від місця звернення
@@ -56,13 +62,19 @@ const user2 = {
 //   console.log(this);
 // }
 
+// const object = {
+//   method: showThis,
+// };
+
 // showThis();
+
+// object.method();
 
 // this в callback-функціях
 
 // const user = {
-//   firstName: 'Andrii',
-//   lastName: 'Shevchuk',
+//   firstName: "Andrii",
+//   lastName: "Shevchuk",
 
 //   getFullName() {
 //     return `${this.firstName} ${this.lastName}`;
@@ -78,17 +90,31 @@ const user2 = {
 // this у стрілочних функціях, прив'язка до батькіської функції
 
 // 1.
-// const showThis = () => {
-//   console.log(this);
-// };
 
 // showThis();
+
+// const object = {
+//   name: "Vitaliy",
+//   age: 5,
+
+//   showThisDeclare() {
+//     console.log(this);
+
+//     const showThisArrow = () => {
+//       console.log(this);
+//     };
+
+//     showThisArrow();
+//   },
+// };
+
+// object.showThisDeclare();
 
 // 2.
 
 // const data = {
-//   date: '12-03-2019',
-//   extensions: ['.pdf', '.txt', '.html'],
+//   date: "12-03-2019",
+//   extensions: [".pdf", ".txt", ".html"],
 
 //   showDate() {
 //     const arrowFunc = () => {
@@ -99,27 +125,30 @@ const user2 = {
 //   },
 // };
 
-// data.showDate();
-
 /*
   3. Методи функцій bind, call, apply
 */
 
 // Метод call
 
-// function getData() {
+// function getData(a, b) {
+//   console.log(a, b);
+
 //   console.log(`${this.username} is ${this.age} years old.`);
 // }
 
 // const userFirst = {
-//   username: 'Max',
+//   username: "Max",
 //   age: 29,
 // };
 
 // const userSecond = {
-//   username: 'Anatoliy',
+//   username: "Anatoliy",
 //   age: 33,
 // };
+
+// getData.call(userFirst);
+// getData.call(userSecond, 5, 10);
 
 // Метод apply
 
@@ -128,20 +157,23 @@ const user2 = {
 // }
 
 // const firstUser = {
-//   username: 'Alina',
+//   username: "Alina",
 //   age: 30,
 // };
 
 // const secondUser = {
-//   username: 'Vitaliy',
+//   username: "Vitaliy",
 //   age: 35,
 // };
+
+// greetGuest.call(secondUser, "Hi");
+// greetGuest.apply(secondUser, ["Hi"]);
 
 // Метод bind
 
 // const fordAuto = {
-//   make: 'Ford',
-//   mark: 'Mondeo',
+//   make: "Ford",
+//   mark: "Mondeo",
 //   wheels: 4,
 
 //   getInfo() {
@@ -154,9 +186,11 @@ const user2 = {
 //   mark: 'Bogdan',
 // };
 
-// const getInfo = fordAuto.getInfo;
+// const getInfo = fordAuto.getInfo.bind(fordAuto);
 
-// getInfo()
+// console.log(getInfo === fordAuto.getInfo);
+
+// getInfo.call({ a: 5 });
 
 /*
   4. Калькулятор
@@ -171,7 +205,28 @@ const user2 = {
 // const calculator = {
 //   a: 0,
 //   b: 0,
+
+//   write(a = 0, b = 0) {
+//     this.a = a;
+//     this.b = b;
+//   },
+
+//   getSum() {
+//     return this.a + this.b;
+//   },
+
+//   getMulti() {
+//     return this.a * this.b;
+//   },
 // };
+
+// calculator.write(5, 10);
+
+// console.log(calculator.getSum());
+
+// console.log(calculator.getMulti());
+
+// console.log(calculator);
 
 /*
   5. Це ladder (драбина) – об'єкт, який дозволяє підніматись вгору
@@ -186,7 +241,25 @@ const user2 = {
 
 // const ladder = {
 //   step: 0,
+
+//   up() {
+//     this.step += 1;
+//   },
+
+//   down() {
+//     this.step -= 1;
+//   },
+
+//   showStep() {
+//     console.log(`Щабель - ${this.step}`);
+//   },
 // };
+
+// ladder.up();
+// ladder.up();
+// ladder.up();
+// ladder.down();
+// ladder.showStep();
 
 /* 
   Змініть код методів up, down та showStep таким чином, щоб 
@@ -194,6 +267,35 @@ const user2 = {
 
   ladder.up().up().down().showStep()
 */
+
+// const ladder = {
+//   step: 0,
+
+//   up() {
+//     this.step += 1;
+
+//     return this;
+//   },
+
+//   down() {
+//     this.step -= 1;
+
+//     return this;
+//   },
+
+//   showStep() {
+//     console.log(`Щабель - ${this.step}`);
+//   },
+// };
+
+// ladder.up().up().down().showStep();
+
+// console.log(
+//   [1]
+//     .map(() => {})
+//     .filter(() => true)
+//     .reduce(() => {})
+// );
 
 /*
   6. Напишіть метод calcTotalPrice(stoneName), який приймає назву
@@ -203,12 +305,42 @@ const user2 = {
 
 // const chopShop = {
 //   stones: [
-//     { name: 'Emerald', price: 1300, quantity: 4 },
-//     { name: 'Diamond', price: 2700, quantity: 3 },
-//     { name: 'Sapphire', price: 1400, quantity: 7 },
-//     { name: 'Ruby', price: 800, quantity: 2 },
+//     { name: "Emerald", price: 1300, quantity: 4 },
+//     { name: "Diamond", price: 2700, quantity: 3 },
+//     { name: "Sapphire", price: 1400, quantity: 7 },
+//     { name: "Ruby", price: 800, quantity: 2 },
 //   ],
+
+//   calcTotalPrice(stoneName) {
+//     const stone = this.stones.find(
+//       (el) => el.name.toLowerCase() === stoneName.toLowerCase()
+//     );
+
+//     if (!stone) {
+//       return `Stone by name ${stoneName} does not exist`;
+//     }
+
+//     const { price, quantity } = stone;
+
+//     return price * quantity;
+//   },
 // };
 
-// console.log(chopShop.calcTotalPrice('Emerald')); // 5200
-// console.log(chopShop.calcTotalPrice('Diamond')); // 8100
+// console.log(chopShop.calcTotalPrice("Emerald")); // 5200
+// console.log(chopShop.calcTotalPrice("Diamond")); // 8100
+
+// function getMinNumber(...rest) {
+//   // return Math.min.call(null, ...rest);
+
+//   return Math.min.apply(null, rest);
+// }
+
+// console.log(getMinNumber(1, 2, 3, 4));
+
+// function showName(age, number) {
+//   console.log(this.name, age, number);
+// }
+
+// const bindedFunc = showName.bind({ name: "Andrii" }, 30);
+
+// bindedFunc(5);
