@@ -23,12 +23,29 @@
   приймає кількість постів, які потрібно додати користувачеві
 */
 
+// class Blogger {
+//   constructor({ email, age, numberOfPosts, topics }) {
+//     this.email = email;
+//     this.age = age;
+//     this.numberOfPosts = numberOfPosts;
+//     this.topics = topics;
+//   }
+
+//   getInfo() {
+//     return `User ${this.email} is ${this.age} years old and has ${this.numberOfPosts} posts`;
+//   }
+
+//   updatePostCount(value) {
+//     this.numberOfPosts = value;
+//   }
+// }
+
 // 1
 // const mango = new Blogger({
-//   email: 'mango@mail.com',
+//   email: "mango@mail.com",
 //   age: 24,
 //   numberOfPosts: 20,
-//   topics: ['tech', 'cooking'],
+//   topics: ["tech", "cooking"],
 // });
 
 // console.log(mango);
@@ -67,12 +84,26 @@
   addItem(item) - отримує новий товар та додає його до поточних
 */
 
-// const coursesStorage = new Storage(['HTML', 'JS', 'CSS']);
+// class Storage {
+//   constructor(goods) {
+//     this.items = goods;
+//   }
+
+//   getItems() {
+//     return this.items;
+//   }
+
+//   addItem(item) {
+//     this.items.push(item);
+//   }
+// }
+
+// const coursesStorage = new Storage(["HTML", "JS", "CSS"]);
 // console.log(coursesStorage);
 
 // console.table(coursesStorage.getItems());
 
-// coursesStorage.addItem('🍌');
+// coursesStorage.addItem("🍌");
 // console.log(coursesStorage.getItems());
 
 /*
@@ -85,10 +116,42 @@
   Оголоси приватні властивості #login та #email, доступ до яких зроби через геттер та сеттер login та email
 */
 
+// class User {
+//   #login;
+//   #email;
+
+//   constructor({ login, email }) {
+//     this.#login = login;
+//     this.#email = email;
+//   }
+
+//   get login() {
+//     return this.#login;
+//   }
+
+//   set login(newLogin) {
+//     this.#login = newLogin;
+//   }
+
+//   get email() {
+//     return this.#email;
+//   }
+
+//   set email(newEmail) {
+//     this.#email = newEmail;
+//   }
+// }
+
 // const mango = new User({
-//     login: 'Mango',
-//     email: 'mango@dog.woof',
+//   login: "Mango",
+//   email: "mango@dog.woof",
 // });
+
+// console.log(mango);
+
+// mango.login = `Sheva`;
+
+// console.log(mango.login);
 
 /*
   4. Нотатки
@@ -106,11 +169,27 @@
   Додай метод addNote(note) для додавання нотатки
 */
 
+// class Notes {
+//   static Priority = {
+//     LOW: "low",
+//     NORMAL: "normal",
+//     HIGH: "high",
+//   };
+
+//   constructor(items) {
+//     this.items = items;
+//   }
+
+//   addNote(note) {
+//     this.items.push(note);
+//   }
+// }
+
 // const myNotes = new Notes([]);
 
 // myNotes.addNote({
-//     text: 'Моя перша нотатка',
-//     priority: Notes.Priority.LOW
+//   text: "Моя перша нотатка",
+//   priority: Notes.Priority.LOW,
 // });
 
 // myNotes.addNote({
@@ -118,7 +197,7 @@
 //     priority: Notes.Priority.HIGH
 // });
 
-// console.log(myNotes.items);
+// console.log(myNotes);
 
 /*
   5. Прототипне наслідування детальніше
@@ -136,7 +215,40 @@
 
 // const obj2 = Object.create(obj1);
 
+// for (let key in obj2) {
+//   console.log(key);
+// }
+
+// console.log(obj2);
+
+// console.log(obj1.hasOwnProperty("a"));
+
+// const obj3 = Object.create(obj2);
+
 // obj2.c = 3
 
-// console.log(obj2)
-// console.log(obj2.a)
+// console.log(obj3.dasdas());
+// console.log(obj3);
+
+// class NewClass {
+//   static #t = ``;
+// }
+
+// const newInstance = new NewClass();
+
+// console.log(newInstance);
+
+// const string = new String("GoIt");
+
+// delete String.prototype.toString;
+// delete Object.prototype.toString;
+
+// console.log(string);
+// console.dir(string.toString());
+
+// console.log(obj);
+// console.log(obj.toString());
+
+const number = new Number(32323);
+
+console.log(number);
