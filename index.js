@@ -1,254 +1,252 @@
-/*
-  1. Блогер
+"use strict";
 
-  Поняття клас та екземпляр, визначення, призначення
+// class User1 {
+//   static #name = "Katya";
 
-  Прототипне наслідування в інстансів класу
-
-  Напиши клас Blogger для створення об'єкта блогера з 
-  наступними властивостями:
-
-  email - пошта, рядок
-  age - вік, число
-  numberOfPosts - кількість постів, число
-  topics - масив тем, на яких спеціалізується блогер
-
-  Клас очікує один параметр – об'єкт налаштувань з 
-  однойменними властивостями.
-
-  Додай метод getInfo(), який повертає рядок: 
-  User ${пошта} is ${вік} years old and has ${у постів} posts
-
-  Додай метод updatePostCount(value), який у параметрі value 
-  приймає кількість постів, які потрібно додати користувачеві
-*/
-
-// class Blogger {
-//   constructor({ email, age, numberOfPosts, topics }) {
-//     this.email = email;
-//     this.age = age;
-//     this.numberOfPosts = numberOfPosts;
-//     this.topics = topics;
-//   }
-
-//   getInfo() {
-//     return `User ${this.email} is ${this.age} years old and has ${this.numberOfPosts} posts`;
-//   }
-
-//   updatePostCount(value) {
-//     this.numberOfPosts = value;
+//   static get name() {
+//     return User.#name;
 //   }
 // }
 
-// 1
-// const mango = new Blogger({
-//   email: "mango@mail.com",
-//   age: 24,
-//   numberOfPosts: 20,
-//   topics: ["tech", "cooking"],
-// });
+// console.log(User1.name);
 
-// console.log(mango);
-
-// console.log(mango.getInfo());
-
-// mango.updatePostCount(5);
-
-// console.log(mango.getInfo());
-
-// 2
-// const poly = new Blogger({
-//   email: 'poly@mail.com',
-//   age: 19,
-//   numberOfPosts: 17,
-//   topics: ['sports', 'gaming', 'health'],
-// });
-
-// console.log(poly);
-
-// console.log(poly.getInfo());
-
-// poly.updatePostCount(4);
-
-// console.log(poly.getInfo());
-
-/*
-  2. Сховище
- 
-  Напиши клас Storage, який створює об'єкти для управління складом товарів. При виклику отримуватиме один аргумент - початковий масив товарів, і записуватиме його у властивість items
-
-  Додай методи класу:
-
-  getItems() – повертає масив товарів
-
-  addItem(item) - отримує новий товар та додає його до поточних
-*/
-
-// class Storage {
-//   constructor(goods) {
-//     this.items = goods;
+// class User2 {
+//   #showName() {
+//     console.log("Olya");
 //   }
 
-//   getItems() {
-//     return this.items;
-//   }
-
-//   addItem(item) {
-//     this.items.push(item);
+//   get showName() {
+//     return this.#showName;
 //   }
 // }
 
-// const coursesStorage = new Storage(["HTML", "JS", "CSS"]);
-// console.log(coursesStorage);
+// const instance = new User2();
 
-// console.table(coursesStorage.getItems());
+// instance.showName();
 
-// coursesStorage.addItem("🍌");
-// console.log(coursesStorage.getItems());
+// const numbers = [1, 2, 3, 4, 5];
 
-/*
-  3. User
+// debugger;
 
-  Приватні властивості
-  
-  Напиши клас User який створює об'єкт із властивостями login та email
-  
-  Оголоси приватні властивості #login та #email, доступ до яких зроби через геттер та сеттер login та email
-*/
+// const result = numbers.reduce((acc, el, index) => acc + el, 0);
 
-// class User {
-//   #login;
-//   #email;
+// console.log(result);
 
-//   constructor({ login, email }) {
-//     this.#login = login;
-//     this.#email = email;
-//   }
+// const objects = [
+//   { total: 2 },
+//   { total: 5 },
+//   { total: 1 },
+//   { total: 8 },
+//   { total: 2 },
+//   { total: 3 },
+//   { total: 8 },
+//   { total: 1 },
+//   { total: 2 },
+// ];
 
-//   get login() {
-//     return this.#login;
-//   }
+// to calculate what is the total
+// const values = objects.reduce((allValues, obj) => {
+//   allValues.push(obj.total);
+//   return allValues;
+// }, []);
+// console.log(values);
 
-//   set login(newLogin) {
-//     this.#login = newLogin;
-//   }
+// const getTotalValue = values.reduce((acc, currentValue) => {
+//   return (acc += currentValue);
+// }, 0);
 
-//   get email() {
-//     return this.#email;
-//   }
+// console.log(getTotalValue);
 
-//   set email(newEmail) {
-//     this.#email = newEmail;
-//   }
-// }
+// const values = objects.reduce((acc, { total }) => acc + total, 0);
 
-// const mango = new User({
-//   login: "Mango",
-//   email: "mango@dog.woof",
-// });
+// console.log(values);
 
-// console.log(mango);
+// let array = [
+//   { age: 44, name: "Sam" },
+//   { age: 22, name: "Jack" },
+// ];
 
-// mango.login = `Sheva`;
+// // Написати функцію, яка вертатитме об'єкт obj = { 'Sam' : 44, 'Jack' : 22};
 
-// console.log(mango.login);
+// const transformArrayToObject = (arr) =>
+//   arr.reduce((acc, { name, age }) => {
+//     acc[name] = age;
 
-/*
-  4. Нотатки
+//     return acc;
+//   }, {});
 
-  Статичні властивості
-
-  Напиши клас Notes, який управляє колекцією нотаток у властивості items. Нотатка це об'єкт із властивостями text та priority. Додай класу статичну властивість Priority, у якій зберігатиметься об'єкт із пріоритетами.
-
-  {
-    LOW: 'low',
-    NORMAL: 'normal',
-    HIGH: 'high'
-  }
-  
-  Додай метод addNote(note) для додавання нотатки
-*/
-
-// class Notes {
-//   static Priority = {
-//     LOW: "low",
-//     NORMAL: "normal",
-//     HIGH: "high",
-//   };
-
-//   constructor(items) {
-//     this.items = items;
-//   }
-
-//   addNote(note) {
-//     this.items.push(note);
-//   }
-// }
-
-// const myNotes = new Notes([]);
-
-// myNotes.addNote({
-//   text: "Моя перша нотатка",
-//   priority: Notes.Priority.LOW,
-// });
-
-// myNotes.addNote({
-//     text: 'Моя друга нотатка',
-//     priority: Notes.Priority.HIGH
-// });
-
-// console.log(myNotes);
-
-/*
-  5. Прототипне наслідування детальніше
-
-  Метод Object.create
-
-  Власні/невласні властивості, перебір циклом for in
-  та метод hasOwnProperty
-*/
-
-// const obj1 = {
-//   a: 1,
-//   b: 2,
-// };
-
-// const obj2 = Object.create(obj1);
-
-// for (let key in obj2) {
-//   console.log(key);
-// }
-
-// console.log(obj2);
-
-// console.log(obj1.hasOwnProperty("a"));
-
-// const obj3 = Object.create(obj2);
-
-// obj2.c = 3
-
-// console.log(obj3.dasdas());
-// console.log(obj3);
-
-// class NewClass {
-//   static #t = ``;
-// }
-
-// const newInstance = new NewClass();
-
-// console.log(newInstance);
-
-// const string = new String("GoIt");
-
-// delete String.prototype.toString;
-// delete Object.prototype.toString;
-
-// console.log(string);
-// console.dir(string.toString());
+// const obj = transformArrayToObject(array);
 
 // console.log(obj);
-// console.log(obj.toString());
 
-const number = new Number(32323);
+// const setInstance = new Set([1, 2, 3, 4, 5, 4, 4, 5, 5]);
 
-console.log(number);
+// console.log(setInstance.delete(2));
+
+// console.log(setInstance);
+
+// const array = [1, 2, 3, 4, 5];
+
+// delete array[1];
+
+// console.log(array);
+
+// const VALID_STATUSES = new Set(["SUCCESS", "FINAL", "DONE"]);
+
+// const people = [
+//   { name: "Max", age: 20, status: "IN_PROGRESS" },
+//   { name: "Sam", age: 21, status: "DONE" },
+//   { name: "Dan", age: 30, status: "SUCCESS" },
+// ];
+
+// Потрібно отримати  ['Sam', 'Dan']. Розв'язання видає правильний резльтат.
+
+// const peopleWithValidStatus = people
+//   .filter((person) => VALID_STATUSES.has(person.status))
+//   .map((person) => person.name);
+
+// console.log(peopleWithValidStatus);
+
+// const mapObj = new Map();
+// mapObj.set("a", "1");
+// mapObj.set("s", "25");
+// mapObj.set("b", "33");
+// mapObj.set("c", "15");
+
+// console.log(mapObj.set(13, { isLucky: false }));
+
+// console.log(mapObj.keys());
+
+// const user = { name: "Vika", age: 22 };
+
+// const { age, ...newUser } = user;
+
+// console.log(newUser);
+
+// let counter = 0;
+
+// const increaseCounterGenerator = () => {
+//   let counter = 0;
+
+//   return () => ++counter;
+// };
+
+// const counter1 = increaseCounterGenerator();
+
+// const counter2 = increaseCounterGenerator();
+
+// console.log(counter1());
+// console.log(counter1());
+// console.log(counter1());
+
+// console.log(counter2());
+// console.log(counter2());
+
+// function showUserName() {
+//   console.log(this.name);
+// }
+
+// const user = { name: "Anya", showUserName };
+
+// user.showUserName();
+// user.showUserName();
+
+// const bindedFunc = showUserName.bind(user).bind({ name: "Alina" });
+
+// showUserName();
+
+// bindedFunc();
+
+// const slugify = (title) => title.toLowerCase().split(" ").join("-");
+
+// console.log(slugify("Hi from GoIt with Andrii"));
+
+//" Чому ми не можемо одразу розділити за допомогою split('-')?
+
+// const arr = [1, 2, 3, 4];
+
+// let total = 0;
+// let index = 0;
+
+// const countNumbers = (arr) => {
+//   const arrayEl = arr[index];
+
+//   if (arrayEl === undefined) {
+//     return total;
+//   }
+
+//   total += arrayEl;
+//   index += 1;
+
+//   countNumbers(arr);
+// };
+
+// console.log(countNumbers(arr));
+
+// const HOF = (context, callback) => {
+//   callback.call(context);
+// };
+
+// function callback() {
+//   console.log(this.price);
+// }
+
+// HOF({ price: 2000 }, callback);
+
+// class User {
+//   constructor({ name, age }) {
+//     this.name = name;
+//     this.age = age;
+//   }
+
+//   sayHi() {
+//     console.log(`Hello, my name is ${this.name}`);
+//   }
+// }
+
+// class Admin extends User {
+//   constructor({ name, age, isCanModerate }) {
+//     super({ name, age });
+
+//     this.isCanModerate = isCanModerate;
+//   }
+
+//   sayHi() {
+//     console.log(`Hello, my name is ${this.name} and i am administrator`);
+//   }
+// }
+
+// const user = new User({ name: "Andrii", age: 30 });
+
+// console.log(user);
+
+// const user = new Admin({ name: "Andrii", age: 30, isCanModerate: true });
+// console.log(user);
+
+// user.sayHi();
+
+// function Calculator() {}
+
+// Calculator.prototype.calculate = function (str) {
+//   if (typeof str !== "string") {
+//     throw new Error("Переданий аргумент не є рядком");
+//   }
+
+//   const [firstNumber, operator, secondNumber] = str.split(" ");
+
+//   return Calculator.prototype[operator](+firstNumber, +secondNumber);
+// };
+
+// Calculator.prototype.addMethod = function (name, func) {
+//   Calculator.prototype[name] = func;
+// };
+
+// const professionCalc = new Calculator();
+
+// professionCalc.addMethod("+", (a, b) => a + b);
+// professionCalc.addMethod("-", (a, b) => a - b);
+// professionCalc.addMethod("*", (a, b) => a * b);
+// professionCalc.addMethod("/", (a, b) => a / b);
+// professionCalc.addMethod("**", (a, b) => a ** b);
+
+// console.log(professionCalc.calculate("8 / 4"));
