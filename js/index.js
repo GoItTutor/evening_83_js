@@ -15,3 +15,23 @@
 */
 
 // https://picsum.photos/200/300
+
+// const imgEl = document.querySelector(".js-img");
+
+// const swapBtnEl = document.querySelector(".btn.js-swap-btn");
+
+// const deleteListenerBtnEl = document.querySelector(".btn.js-remove-listener");
+
+// console.log(imgEl);
+// console.log(swapBtnEl);
+// console.log(deleteListenerBtnEl);
+
+// const handleSwapBtnClick = () => {
+//   imgEl.src = "https://picsum.photos/200/300";
+// };
+
+// swapBtnEl.addEventListener("click", handleSwapBtnClick);
+
+// deleteListenerBtnEl.addEventListener('click', () => {
+//   swapBtnEl.removeEventListener("click", handleSwapBtnClick);
+// })
