@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Messages</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
-        integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/messages.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/messages.css" />
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <ul class="messages-wrapper list js-messages-wrapper">
-            <li class="message">
-                <h3>Лошадь</h3>
-                <p>Домашняя лошадь - животное семейства непарнокопытных, одомашненный и единственный сохранившийся
-                    подвид
-                    дикой лошади, вымершей в дикой природе, за исключением небольшой популяции лошади Пржевальского.</p>
-                <button type="button" class="message__close-btn">[x]</button>
-            </li>
-            <li class="message">
+      <ul class="messages-wrapper list js-messages-wrapper">
+        <li class="message" data-animal="Horse">
+          <h3>Лошадь</h3>
+          <p>
+            Домашняя лошадь - животное семейства непарнокопытных, одомашненный и
+            единственный сохранившийся подвид дикой лошади, вымершей в дикой
+            природе, за исключением небольшой популяции лошади Пржевальского.
+          </p>
+          <button type="button" class="message__close-btn">[x]</button>
+        </li>
+        <!-- <li class="message">
                 <h3>Осёл</h3>
                 <p>Домашний осёл или ишак — одомашненный подвид дикого осла, сыгравший важную историческую роль в
                     развитии
@@ -40,10 +45,9 @@
                     биологический вид.
                 </p>
                 <button type="button" class="message__close-btn">[x]</button>
-            </li>
-        </ul>
+            </li> -->
+      </ul>
     </div>
     <script src="./js/messages.js"></script>
-</body>
-
+  </body>
 </html>
