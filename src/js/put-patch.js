@@ -1,14 +1,30 @@
 'use strict';
 
+const { default: axios } = require('axios');
+
 /*
  * Method(PUT/PATCH). Headers ("Content-Type": "application/json"). Body.
  */
 
 const BASE_URL = 'http://localhost:3000';
 
-// const updateUserById = (userId, infoForUpdate) => {}
+// const updateUserById = (userId, infoForUpdate) =>
+//   fetch(`${BASE_URL}/users/${userId}`, {
+//     method: 'PATCH',
+//     body: JSON.stringify(infoForUpdate),
+//     headers: { 'Content-Type': 'application/json' },
+//   }).then(response => {
+//     if (!response.ok) {
+//       throw new Error(response.status);
+//     }
 
-// updateUserById(15, { name: 'Oleksii Repin', email: 'test@gmail.com' })
+//     return response.json();
+//   });
+
+// const updateUserById = (userId, infoForUpdate) =>
+//   axios.put(`${BASE_URL}/users/${userId}`, infoForUpdate);
+
+// updateUserById(9, { friends: [], company: {} })
 //   .then(data => {
 //     console.log(data);
 //   })
